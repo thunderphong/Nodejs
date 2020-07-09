@@ -1,16 +1,10 @@
-// var express = require('express');
-// var app = express();
+// Require dotenv
+require('dotenv').config();
 
-// app.get('/', (req, res) =>{
-//     res.send('Home page!!');
-// })
+// Require Express
+const express = require('express');
+const app = express();
 
-// app.listen(3000);
+app.listen(process.env.PORT || 3000, () => console.log('Express listen on port ' + process.env.PORT || 3000));
 
-// console.log(process);
-
-console.log('hi');
-
-setTimeout(() => console.log('there'), 0);
-
-console.log('BAABABA');
+// Routes
