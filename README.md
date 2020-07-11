@@ -27,4 +27,10 @@ Bên trong hàm setTimeout là một callback(1), và bên trong callback(1) đ�
 Sơ khai thì là vậy, nhưng nếu viết code thế này thì nhược điểm của nó hiện ra rất rõ ràng, callback hell. Callback hell là một chuỗi các callback mà callback này lồng trong callback khác. 
 ![Callback hell - Dev Ed](https://lh3.googleusercontent.com/pw/ACtC-3fY6P5dIn75pGNUViysbuSvUazC-JqiUrmJfAfE2MZ2NOWk5xjafsYw-53nUqln_ss8D6iUjVbhEGJfj6iuoWUmI3u5XY50XdO8aR-uUVgouH1TFgUH7xwgd1zorteIl_K2bsATJo67PheoJBDDi5pC=w936-h292-no?authuser=0)
 
-Để xử lý cái này thì cần promise. Tính sau
+Để xử lý cái này thì cần promise. Tính sau.
+## Promise
+## Async - Await
+## Express JS
+## MVC
+## Mongo and Mongoose
+## A slices of Express-validator
