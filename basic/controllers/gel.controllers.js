@@ -1,9 +1,11 @@
 const gelSchema = require('../models/gel.models');
-const { get } = require('mongoose');
 
-exports.gel = (req, res) => res.json({
-    message: "Return something"
-});
+exports.gel = (req, res) => {
+    const post = gelSchema.find()
+        .select("title")
+        .then(result => res.json({result}))
+        .catch(err => console.err(err));
+}
 
 exports.createGel = (req, res) => {
     const gel = new gelSchema(req.body);
