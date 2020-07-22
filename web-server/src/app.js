@@ -53,7 +53,7 @@ app.get('/help/*', (req, res) => {
     res.render('404-helpPage', {
         title: '404 Help Page',
         message: 'Help article not found!',
-        name: 'Phuong'
+        name: 'Phuongss'
     });
 })
 
