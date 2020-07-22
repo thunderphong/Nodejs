@@ -61,7 +61,7 @@ app.get('*', (req, res) => {
     res.render('404', {
         title: '404 Page',
         message: 'Page not found!',
-        name: 'Phuong'
+        name: 'Phuonssssg'
     });
 })
 
