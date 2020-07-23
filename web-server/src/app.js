@@ -36,21 +36,29 @@ app.get('/about', (req, res) => {
     });
 })
 
+// Handle weather request
+const geocoding = require('./utils/geocode');
+const forecast = require('./utils/forecast');
+
 app.get('/Weather', (req, res) => {
-    res.send([
-        {
-            location: 'Can Tho',
-            forecast: '20 C degrees, no UV'
-        }, 
-        {
-            location: 'Ha Noi',
-            forecast: '30 C degrees, no UV'
-        }
-    ]);
+    if (!req.query.address) return res.send({error: 'Address must be provided!'});
+
+    geocoding(req.query.address, (err, { longitude, latitude, location } = {}) => {
+        if (err) { return res.send(err) };
+    
+        forecast(longitude, latitude, (error, forecastData) => {
+            if (err) { return res.send(error) };
+            res.send({
+                data: forecastData,
+                location,
+                address: req.query.address
+            });
+        })
+    })  
 })
 
 app.get('/help/*', (req, res) => {
-    res.render('404-helpPage', {
+    res.render('404', {
         title: '404 Help Page',
         message: 'Help article not found!',
         name: 'Phuongssss'

@@ -16,7 +16,7 @@ body {
 
 footer {
     color: #888888;
-    border-top: 10px solid #333333;
+    border-top: 1px solid #cccccc;
     margin-top: 16px;
     padding: 16px 0;
 }
@@ -41,3 +41,15 @@ header a {
     width: 250px;
 }
 
+input {
+    border: 1px solid #cccccc;
+    padding: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #999999;
+    background-color: #888;
+    color: white;
+    padding: 5px;
+}
