@@ -37,7 +37,10 @@ router.patch('/users/:id', async (req, res) => {
     if(!isValidOperate) return res.status(400).send({err: 'Invalid Update'});
 
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        const user = await User.findById(req.params.id);
+        update.forEach((up) => user[up] = req.body[up]);
+        await user.save();
+
         if (!user) return res.status(404).send();
         res.send(user);
     } catch (err) {
