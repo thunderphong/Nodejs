@@ -18,8 +18,7 @@ const userSchema = mongoose.Schema({
         lowercase: true,
         validate(value){
             if (!validator.isEmail(value)) throw new Error('Email is invalid!');
-        }
-            
+        }       
     },
     age: {
         type: Number,
@@ -55,7 +54,7 @@ userSchema.virtual('tasks', {
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({ _id: user._id }, 'mockData'
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET
         // , { expiresIn: '1m' }
     );
     user.tokens = user.tokens.concat({ token })
